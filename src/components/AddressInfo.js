@@ -65,6 +65,7 @@ const AddressInfo = ({ data, handleChange, prevStep, nextStep, errors }) => {
               helperText={errors.zip}
               fullWidth
               margin="normal"
+              type='number'
             />
           </Grid>
           <Grid item xs={6}>

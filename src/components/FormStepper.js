@@ -19,6 +19,7 @@ const FormStepper = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    document.title= "Form-Steps"
     const savedData = JSON.parse(localStorage.getItem('formData'));
     if (savedData) {
       setFormData(savedData);
@@ -32,6 +33,7 @@ const FormStepper = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+    
   };
 
   const nextStep = () => {
@@ -70,6 +72,7 @@ const FormStepper = () => {
     setStep((prevStep) => prevStep - 1);
   };
 
+  //when submit
   const handleSubmit = () => {
     // Form submission logic can go here
     if (step === 2) {

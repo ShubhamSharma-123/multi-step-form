@@ -17,6 +17,7 @@ const PersonalInfo = ({ data, handleChange, nextStep, errors }) => {
               helperText={errors.name}
               fullWidth
               margin="normal"
+              type='text'
             />
           </Grid>
           <Grid item xs={12}>
@@ -41,6 +42,7 @@ const PersonalInfo = ({ data, handleChange, nextStep, errors }) => {
               helperText={errors.phone}
               fullWidth
               margin="normal"
+              
             />
           </Grid>
           <Grid item xs={12}>
