@@ -19,7 +19,7 @@ const FormStepper = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    document.title= "Form-Steps"
+    document.title = "Form-Steps"
     const savedData = JSON.parse(localStorage.getItem('formData'));
     if (savedData) {
       setFormData(savedData);
@@ -33,19 +33,19 @@ const FormStepper = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
-    
+
   };
 
   const nextStep = () => {
     if (step === 0) {
       // Validate Personal Information fields
-      if (formData.name.trim() === '') {
+      if (formData.name.length<3) {
         setErrors({ ...errors, name: 'Name is required' });
       } else if (formData.email.trim() === '') {
         setErrors({ ...errors, email: 'Email is required' });
       } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
         setErrors({ ...errors, email: 'Email is invalid' });
-      } else if (formData.phone.trim() === '') {
+      } else if (formData.phone.length<10) {
         setErrors({ ...errors, phone: 'Phone is required' });
       } else {
         setErrors({});
@@ -59,7 +59,7 @@ const FormStepper = () => {
         setErrors({ ...errors, city: 'City is required' });
       } else if (formData.state.trim() === '') {
         setErrors({ ...errors, state: 'State is required' });
-      } else if (formData.zip.trim() === '') {
+      } else if (formData.zip.length<6) {
         setErrors({ ...errors, zip: 'Zip Code is required' });
       } else {
         setErrors({});
